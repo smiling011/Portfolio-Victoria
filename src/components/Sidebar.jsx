@@ -1,20 +1,30 @@
 import { motion } from 'framer-motion';
+import { useSound } from '../hooks/useSound';
 
-const SidebarButton = ({ icon, label, onClick }) => (
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    onClick={onClick}
-    className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
-  >
-    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-4 border-primary shadow-lg">
-      {icon}
-    </div>
-    <span className="text-primary text-sm font-bold uppercase tracking-wide">
-      {label}
-    </span>
-  </motion.button>
-);
+const SidebarButton = ({ icon, label, onClick }) => {
+  const playClickSound = useSound('/sounds/click.mp3', 0.2);
+
+  const handleClick = () => {
+    playClickSound();
+    onClick();
+  };
+
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={handleClick}
+      className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+    >
+      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-4 border-primary shadow-lg">
+        {icon}
+      </div>
+      <span className="text-primary text-sm font-bold uppercase tracking-wide">
+        {label}
+      </span>
+    </motion.button>
+  );
+};
 
 const Sidebar = ({ onOpenWindow }) => {
   return (

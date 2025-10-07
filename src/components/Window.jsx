@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useSound } from '../hooks/useSound';
 
 const Window = ({ 
   id, 
@@ -14,6 +15,15 @@ const Window = ({
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const windowRef = useRef(null);
+  
+  // Sonidos
+  const playOpenSound = useSound('/sounds/open.mp3', 0.3);
+  const playCloseSound = useSound('/sounds/close.mp3', 0.3);
+
+  // Reproducir sonido al abrir la ventana
+  useEffect(() => {
+    playOpenSound();
+  }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   const handleDragStart = () => {
     setIsDragging(true);
@@ -26,6 +36,14 @@ const Window = ({
       x: position.x + info.offset.x,
       y: position.y + info.offset.y
     });
+  };
+
+  const handleClose = () => {
+    playCloseSound();
+    // Pequeño delay para que se escuche el sonido antes de cerrar
+    setTimeout(() => {
+      onClose(id);
+    }, 100);
   };
 
   return (
@@ -58,7 +76,7 @@ const Window = ({
           {title}
         </h2>
         <button
-          onClick={() => onClose(id)}
+          onClick={handleClose}
           className=""
         >
           <span className="text-primary font-bold text-xl leading-none">[X]</span>

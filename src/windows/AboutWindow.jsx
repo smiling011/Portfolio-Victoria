@@ -14,7 +14,7 @@ const AboutWindow = () => {
         <div className="w-48 h-48 rounded-full bg-gradient-to-br border-4 border-primary shadow-xl overflow-hidden">
           {/* Aquí va tu imagen de perfil */}
           <img 
-            src="/assets/img/pixilart-drawing.png" 
+            src="src/assets/img/pixilart-drawing.png" 
             
           />
         </div>
@@ -57,7 +57,7 @@ const AboutWindow = () => {
           download
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-full px-8 py-3 bg-secondary text-primary font-bold rounded-full border-3 border-primary shadow-lg hover:bg-primary hover:text-white transition-colors text-center"
+          className="w-full px-8 py-3 bg-secondary text-primary font-bold rounded-full border-4 border-primary shadow-lg hover:bg-primary hover:text-white transition-colors text-center"
         >
           CV
         </motion.a>
@@ -84,11 +84,11 @@ const AboutWindow = () => {
 
         <div className="space-y-4 text-primary leading-relaxed">
           <p>
-            Desarrolladora Full Stack Web y Móvil, con formación técnica en programación de software. 
+            Desarrollador Full Stack Web y Móvil, con formación técnica en programación de software. 
             Actualmente estudio Análisis y Desarrollo de Software.
           </p>
           <p>
-            Me especializo en el desarrollo de aplicaciones web y móviles, con enfoque en crear 
+            Me especializo en el desarrollo de aplicaciones, con enfoque en crear 
             soluciones funcionales y bien estructuradas.
           </p>
           <p>

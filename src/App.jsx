@@ -3,6 +3,7 @@ import { useWindowManager } from './hooks/useWindowManager';
 import Sidebar from './components/Sidebar';
 import Window from './components/Window';
 import AboutWindow from './windows/AboutWindow';
+import SkillsWindow from './windows/SkillsWindow';
 
 function App() {
   const { 
@@ -18,7 +19,7 @@ function App() {
       case 'about':
         return <AboutWindow />;
       case 'skills':
-        return <div>Habilidades - En desarrollo</div>;
+        return <SkillsWindow />;
       case 'projects':
         return <div>Proyectos - En desarrollo</div>;
       case 'contact':
@@ -56,7 +57,7 @@ function App() {
         {/* Footer */}
         <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
           <p className="text-primary text-sm">
-            Victoria Vielma 2025 © Todos los derechos reservados
+            Victoria Vielma 2025 © Hecho con ❤️ y ☕
           </p>
         </div>
       </div>
