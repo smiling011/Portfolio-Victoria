@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useSound } from '../hooks/useSound';
 
 const SkillBadge = ({ icon, name, color }) => {
-  const playSound = useSound('/sounds/hover.mp3', 0.2);
+  const playSound = useSound('sounds/hover.mp3', 0.2);
 
   return (
     <motion.div

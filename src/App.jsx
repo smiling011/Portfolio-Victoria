@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Window from './components/Window';
 import AboutWindow from './windows/AboutWindow';
 import SkillsWindow from './windows/SkillsWindow';
+import ProjectsWindow from './windows/ProjectsWindow';
 
 function App() {
   const { 
@@ -21,7 +22,7 @@ function App() {
       case 'skills':
         return <SkillsWindow />;
       case 'projects':
-        return <div>Proyectos - En desarrollo</div>;
+        return <ProjectsWindow />;
       case 'contact':
         return <div>Contacto - En desarrollo</div>;
       default:

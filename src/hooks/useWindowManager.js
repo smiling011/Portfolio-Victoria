@@ -13,6 +13,13 @@ export const useWindowManager = () => {
       contact: 'CONTACTO'
     };
 
+    const sizes = {
+      about: { width: 900, height: 550 },
+      skills: { width: 900, height: 550 },
+      projects: { width: 1100, height: 650 },  // ← Más grande para proyectos
+      contact: { width: 700, height: 500 },
+    };
+
     const newWindow = {
       id: windowId,
       type,
@@ -21,7 +28,7 @@ export const useWindowManager = () => {
         x: 100 + windows.length * 30, 
         y: 100 + windows.length * 30 
       },
-      size: { width: 900, height: 550 },
+      size: sizes[type] || { width: 900, height: 550 },
       zIndex: nextZIndex,
       isMinimized: false,
       isMaximized: false,
