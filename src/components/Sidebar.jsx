@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useSound } from '../hooks/useSound';
 
 const SidebarButton = ({ icon, label, onClick }) => {
-  const playClickSound = useSound('sounds/click.mp3', 0.3);
+  const playClickSound = useSound('sounds/', 0.3);
 
   const handleClick = () => {
     playClickSound();
