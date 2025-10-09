@@ -15,7 +15,7 @@ export const useWindowManager = () => {
 
     const sizes = {
       about: { width: 900, height: 550 },
-      skills: { width: 900, height: 550 },
+      skills: { width: 880, height: 480 },
       projects: { width: 1100, height: 650 },  // ← Más grande para proyectos
       contact: { width: 800, height: 450 },
     };
