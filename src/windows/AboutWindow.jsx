@@ -60,8 +60,8 @@ const AboutWindow = () => {
 
   const handleCVClick = () => {
     playClickSound();
-    // Aquí puedes agregar la lógica de descarga del CV
-  };
+    window.open('documents/Hoja de Vida Victoria Vielma.pdf', '_blank');
+};
 
   return (
     <div className="flex gap-8 items-start">

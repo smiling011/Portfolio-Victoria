@@ -17,7 +17,7 @@ const Window = ({
   const windowRef = useRef(null);
   
   // Sonidos
-  const playOpenSound = useSound('sounds/open.mp3', 0.3);
+  const playOpenSound = useSound('sounds/click.mp3', 0.3);
   const playCloseSound = useSound('sounds/close.mp3', 0.3);
 
   // Reproducir sonido al abrir la ventana
