@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useSound } from '../hooks/useSound';
+import { useTranslation } from 'react-i18next';
 
 const SidebarButton = ({ icon, label, onClick }) => {
   const playClickSound = useSound('sounds/click.mp3', 0.3);
@@ -27,29 +28,31 @@ const SidebarButton = ({ icon, label, onClick }) => {
 };
 
 const Sidebar = ({ onOpenWindow }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="fixed left-0 top-0 h-full w-48 bg-secondary flex flex-col items-center py-8 gap-6 z-50">
       <SidebarButton
         icon="src/assets/icons/About Me.png"
-        label="Sobre mí"
+        label={t('sidebar.about')}
         onClick={() => onOpenWindow('about')}
       />
 
       <SidebarButton
         icon="src/assets/icons/Skills.png"
-        label="Habilidades"
+        label={t('sidebar.skills')}
         onClick={() => onOpenWindow('skills')}
       />
 
       <SidebarButton
         icon="src/assets/icons/Proyectos.png"
-        label="Proyectos"
+        label={t('sidebar.projects')}
         onClick={() => onOpenWindow('projects')}
       />
 
       <SidebarButton
         icon="src/assets/icons/Contacto.png"
-        label="Contacto"
+        label={t('sidebar.contact')}
         onClick={() => onOpenWindow('contact')}
       />
     </div>

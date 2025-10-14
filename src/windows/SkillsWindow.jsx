@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useSound } from '../hooks/useSound';
+import { useTranslation } from 'react-i18next';
 
 const SkillBadge = ({ icon, name }) => {
   const playSound = useSound('sounds/hover.mp3', 0.2);
@@ -19,6 +20,7 @@ const SkillBadge = ({ icon, name }) => {
 };
 
 const SkillsWindow = () => {
+  const { t } = useTranslation();
   const skills = {
     languages: [
       { icon: 'src/assets/icons/python.png', name: 'Python' },
@@ -42,8 +44,8 @@ const SkillsWindow = () => {
       { icon: 'src/assets/icons/docker.png', name: 'Docker' },
     ],
     languages_spoken: [
-      { icon: 'src/assets/icons/UK.png', name: 'English - B1 en formación' },
-      { icon: 'src/assets/icons/ES.png', name: 'Español - Nativo' },
+      { icon: 'src/assets/icons/UK.png', name: t('skills.english') },
+      { icon: 'src/assets/icons/ES.png', name: t('skills.spanish') },
     ],
   };
 
@@ -52,7 +54,7 @@ const SkillsWindow = () => {
       {/* Header */}
       <div className="border-b-2 border-primary pb-4 mb-6">
         <p className="text-primary text-lg">
-          Lenguajes, frameworks, base de datos, herramientas e idiomas que manejo.
+          {t('skills.header')}
         </p>
       </div>
 

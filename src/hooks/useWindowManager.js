@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 export const useWindowManager = () => {
   const [windows, setWindows] = useState([]);
   const [nextZIndex, setNextZIndex] = useState(100);
@@ -16,7 +17,7 @@ export const useWindowManager = () => {
     const sizes = {
       about: { width: 900, height: 550 },
       skills: { width: 880, height: 480 },
-      projects: { width: 1100, height: 650 },  // ← Más grande para proyectos
+      projects: { width: 1100, height: 650 },  
       contact: { width: 800, height: 450 },
     };
 

@@ -8,6 +8,7 @@ import AboutWindow from './windows/AboutWindow';
 import SkillsWindow from './windows/SkillsWindow';
 import ProjectsWindow from './windows/ProjectsWindow';
 import ContactWindow from './windows/ContactWindow';
+import FloatingButtons from './components/FloatingButtons'; 
 
 function App() {
   const [showIntro, setShowIntro] = useState(true); // Estado para mostrar intro
@@ -69,8 +70,12 @@ function App() {
           </p>
         </div>
       </div>
+      <FloatingButtons />
     </div>
   );
+
+  
+
 }
 
 export default App;

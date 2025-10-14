@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useSound } from '../hooks/useSound';
+import { useTranslation } from 'react-i18next';
 
 const AboutWindow = () => {
+  const { t } = useTranslation();
   const [titleIndex, setTitleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -11,9 +13,10 @@ const AboutWindow = () => {
   const playClickSound = useSound('sounds/click.mp3', 0.2);
 
   const titles = [
-    'Desarrollador Full Stack',
-    'Desarrollador Móvil',
-    'Desarrollador Web'
+    t('about.title1'),
+    t('about.title2'),
+    t('about.title3')
+    
   ];
 
   // Efecto de máquina de escribir
@@ -154,10 +157,10 @@ const AboutWindow = () => {
       >
         <div>
           <h1 className="text-4xl font-bold text-primary mb-2">
-            Holis !
+            {t('about.hello')}
           </h1>
           <h2 className="text-5xl font-bold text-primary mb-4">
-            Soy Victoria Vielma
+            {t('about.name')}
           </h2>
           
           {/* Título con efecto de máquina de escribir */}
@@ -173,16 +176,13 @@ const AboutWindow = () => {
 
         <div className="space-y-4 text-primary leading-relaxed">
           <p>
-            Desarrollador Full Stack Web y Móvil, con formación técnica en programación de software. 
-            Actualmente estudio Análisis y Desarrollo de Software.
+            {t('about.description1')}
           </p>
           <p>
-            Me especializo en el desarrollo de aplicaciones, con enfoque en crear 
-            soluciones funcionales y bien estructuradas.
+            {t('about.description2')}
           </p>
           <p>
-            Me interesa seguir desarrollando mis habilidades en entornos reales y contribuir en 
-            equipos de desarrollo donde pueda aportar desde el conocimiento técnico.
+            {t('about.description3')}
           </p>
         </div>
       </motion.div>

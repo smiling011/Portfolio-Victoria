@@ -1,9 +1,13 @@
 import { useCallback } from 'react';
+import { useSoundManager } from './useSoundManager';
 
 export const useSound = (soundPath, volume = 0.3) => {
+  const isMuted = useSoundManager((state) => state.isMuted);
+
   const playSound = useCallback(() => {
+    if (isMuted) return; // No reproducir si está silenciado
+
     try {
-      // Agregar la base URL de Vite automáticamente
       const fullPath = import.meta.env.BASE_URL + soundPath;
       const audio = new Audio(fullPath);
       audio.volume = volume;
@@ -18,7 +22,7 @@ export const useSound = (soundPath, volume = 0.3) => {
     } catch (error) {
       console.log('Error al crear el audio:', error);
     }
-  }, [soundPath, volume]);
+  }, [soundPath, volume, isMuted]);
 
   return playSound;
 };
