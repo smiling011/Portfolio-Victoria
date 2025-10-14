@@ -8,9 +8,11 @@ import AboutWindow from './windows/AboutWindow';
 import SkillsWindow from './windows/SkillsWindow';
 import ProjectsWindow from './windows/ProjectsWindow';
 import ContactWindow from './windows/ContactWindow';
-import FloatingButtons from './components/FloatingButtons'; 
+import FloatingButtons from './components/FloatingButtons';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { t } = useTranslation();
   const [showIntro, setShowIntro] = useState(true); // Estado para mostrar intro
   
   const { 
@@ -42,6 +44,7 @@ function App() {
   }
 
   return (
+    
     <div className="relative w-screen h-screen bg-secondary overflow-hidden">
       <Sidebar onOpenWindow={openWindow} />
 
@@ -64,9 +67,10 @@ function App() {
           ))}
         </AnimatePresence>
 
+
         <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
           <p className="text-primary text-sm">
-            Victoria Vielma 2025 © Todos los derechos reservados
+            {t('footer.rights')}
           </p>
         </div>
       </div>

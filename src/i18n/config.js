@@ -7,10 +7,10 @@ const resources = {
   es: {
     translation: {
       // Sidebar
-      "sidebar.about": "Sobre mí",
-      "sidebar.skills": "Habilidades",
-      "sidebar.projects": "Proyectos",
-      "sidebar.contact": "Contacto",
+      "sidebar.about": "SOBRE MI",
+      "sidebar.skills": "HABILIDADES",
+      "sidebar.projects": "PROYECTOS",
+      "sidebar.contact": "CONTACTO",
       
       // Intro
       "intro.play": "PLAY",
@@ -42,16 +42,16 @@ const resources = {
       "contact.opening": "¡Abriendo!",
       
       // Footer
-      "footer.rights": "© Todos los derechos reservados"
+      "footer.rights": "Victoria Vielma 2025 © Hecho con ❤️ y ☕"
     }
   },
   en: {
     translation: {
       // Sidebar
-      "sidebar.about": "About",
-      "sidebar.skills": "Skills",
-      "sidebar.projects": "Projects",
-      "sidebar.contact": "Contact",
+      "sidebar.about": "ABOUT",
+      "sidebar.skills": "SKILLS",
+      "sidebar.projects": "PROJECTS",
+      "sidebar.contact": "CONTACT",
       
       // Intro
       "intro.play": "PLAY",
@@ -83,7 +83,7 @@ const resources = {
       "contact.opening": "Opening!",
       
       // Footer
-      "footer.rights": "© All rights reserved"
+      "footer.rights": "Victoria Vielma 2025 © Made with ❤️ and ☕"
     }
   }
 };

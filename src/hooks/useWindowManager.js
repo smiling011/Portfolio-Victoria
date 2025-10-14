@@ -1,17 +1,19 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 export const useWindowManager = () => {
   const [windows, setWindows] = useState([]);
   const [nextZIndex, setNextZIndex] = useState(100);
+  const { t } = useTranslation();
 
   const openWindow = (type) => {
     const windowId = `${type}-${Date.now()}`;
     const titles = {
-      about: 'SOBRE MI',
-      skills: 'HABILIDADES',
-      projects: 'PROYECTOS',
-      contact: 'CONTACTO'
+      about: t('sidebar.about'),
+      skills: t('sidebar.skills'),
+      projects: t('sidebar.projects'),
+      contact: t('sidebar.contact')
     };
 
     const sizes = {
