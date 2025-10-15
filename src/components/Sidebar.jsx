@@ -21,7 +21,7 @@ const SidebarButton = ({ icon, label, onClick }) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
-      className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+      className="flex flex-col items-center gap-2 p-4 rounded-lg hover:20 transition-colors cursor-pointer"
     >
       <div className="">
         <img src={icon} alt={label} className="w-20 h-20 object-contain" />
