@@ -3,6 +3,22 @@ import { useState } from 'react';
 import { useSound } from '../hooks/useSound';
 import { useTranslation } from 'react-i18next';
 
+// imagens importadas
+
+import dackyLogo from '../assets/img/Minilogo Dacky.png';
+import dackyGif from '../assets/img/Dacky.gif';
+import python from '../assets/icons/python.png';
+import flask from '../assets/icons/flask.png';
+import dart from '../assets/icons/dart.png';
+import flutter from '../assets/icons/flutter.png';
+import mysql from '../assets/icons/mysql.png';
+import docker from '../assets/icons/docker.png';
+import androidStudio from '../assets/icons/android-studio.png';
+import github from '../assets/icons/github.png';
+import notion from '../assets/icons/notion.png';
+
+
+
 const TechBadge = ({ icon, name }) => {
   const playHoverSound = useSound('sounds/hover.mp3', 0.15);
 
@@ -137,20 +153,20 @@ const ProjectsWindow = () => {
   const projects = [
     {
       name: 'DACKY APP',
-      icon: 'src/assets/img/Minilogo Dacky.png',
-      image: 'src/assets/img/Dacky.gif',
+      icon: dackyLogo,
+      image: dackyGif,
       description: t('projects.description'),
       repository: 'https://github.com/smiling011/ProyectoDacky.git',
       technologies: [
-        { icon: 'src/assets/icons/python.png', name: 'Python' },
-        { icon: 'src/assets/icons/flask.png', name: 'Flask' },
-        { icon: 'src/assets/icons/dart.png', name: 'Dart' },
-        { icon: 'src/assets/icons/flutter.png', name: 'Flutter' },
-        { icon: 'src/assets/icons/mysql.png', name: 'MySQL' },
-        { icon: 'src/assets/icons/docker.png', name: 'Docker' },
-        { icon: 'src/assets/icons/android-studio.png', name: 'Android Studio' },
-        { icon: 'src/assets/icons/github.png', name: 'GitHub' },
-        { icon: 'src/assets/icons/notion.png', name: 'Notion' },
+        { icon: python, name: 'Flask' },
+        { icon: flask, name: 'Python' },
+        { icon: dart, name: 'Dart' },
+        { icon: flutter, name: 'Flutter' },
+        { icon: mysql, name: 'MySQL' },
+        { icon: docker, name: 'Docker' },
+        { icon: androidStudio, name: 'Android Studio' },
+        { icon: github, name: 'GitHub' },
+        { icon: notion, name: 'Notion' },
       ]
     },
     // Puedes agregar más proyectos aquí
