@@ -2,6 +2,27 @@ import { motion } from 'framer-motion';
 import { useSound } from '../hooks/useSound';
 import { useTranslation } from 'react-i18next';
 
+// Importaciond ela img
+import python from '../assets/icons/python.png';
+import flask from '../assets/icons/flask.png';
+import dart from '../assets/icons/dart.png';
+import flutter from '../assets/icons/flutter.png';
+import mysql from '../assets/icons/mysql.png';
+import docker from '../assets/icons/docker.png';
+import androidStudio from '../assets/icons/android-studio.png';
+import github from '../assets/icons/github.png';
+import notion from '../assets/icons/notion.png';
+import html from '../assets/icons/html.png';
+import css from '../assets/icons/css.png';
+import javascript from '../assets/icons/javascript.png';
+import django from '../assets/icons/django.png';
+import git from '../assets/icons/git.png';
+import figma from '../assets/icons/figma.png';
+import UK from '../assets/icons/UK.png';
+import ES from '../assets/icons/ES.png';
+
+
+
 const SkillBadge = ({ icon, name }) => {
   const playSound = useSound('sounds/hover.mp3', 0.2);
 
@@ -23,29 +44,29 @@ const SkillsWindow = () => {
   const { t } = useTranslation();
   const skills = {
     languages: [
-      { icon: 'src/assets/icons/python.png', name: 'Python' },
-      { icon: 'src/assets/icons/javascript.png', name: 'JavaScript' },
-      { icon: 'src/assets/icons/dart.png', name: 'Dart' },
-      { icon: 'src/assets/icons/html.png', name: 'HTML' },
-      { icon: 'src/assets/icons/css.png', name: 'CSS' },
+      { icon: python, name: 'Python' },
+      { icon: javascript, name: 'JavaScript' },
+      { icon: dart, name: 'Dart' },
+      { icon: html, name: 'HTML' },
+      { icon: css, name: 'CSS' },
     ],
     frameworks: [
-      { icon: 'src/assets/icons/mysql.png', name: 'MySQL' },
-      { icon: 'src/assets/icons/django.png', name: 'Django' },
-      { icon: 'src/assets/icons/flutter.png', name: 'Flutter' },
-      { icon: 'src/assets/icons/flask.png', name: 'Flask' },
-      { icon: 'src/assets/icons/android-studio.png', name: 'Android Studio' },
+      { icon: mysql, name: 'MySQL' },
+      { icon: django, name: 'Django' },
+      { icon: flutter, name: 'Flutter' },
+      { icon: flask, name: 'Flask' },
+      { icon: androidStudio, name: 'Android Studio' },
     ],
     tools: [
-      { icon: 'src/assets/icons/notion.png', name: 'Notion' },
-      { icon: 'src/assets/icons/git.png', name: 'Git' },
-      { icon: 'src/assets/icons/figma.png', name: 'Figma' },
-      { icon: 'src/assets/icons/github.png', name: 'GitHub' },
-      { icon: 'src/assets/icons/docker.png', name: 'Docker' },
+      { icon: notion, name: 'Notion' },
+      { icon: git, name: 'Git' },
+      { icon: figma, name: 'Figma' },
+      { icon: github, name: 'GitHub' },
+      { icon: docker, name: 'Docker' },
     ],
     languages_spoken: [
-      { icon: 'src/assets/icons/UK.png', name: t('skills.english') },
-      { icon: 'src/assets/icons/ES.png', name: t('skills.spanish') },
+      { icon: UK, name: t('skills.english') },
+      { icon: ES, name: t('skills.spanish') },
     ],
   };
 

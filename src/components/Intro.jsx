@@ -2,6 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useSound } from '../hooks/useSound';
 
+import desktopLogo from '../assets/img/MY DESKTOP.png';
+
 const Intro = ({ onStart }) => {
   const [isExiting, setIsExiting] = useState(false);
   const playClickSound = useSound('sounds/click.mp3', 0.3);
@@ -90,7 +92,7 @@ const Intro = ({ onStart }) => {
           >
             {/* SVG del logo */}
             <motion.img
-              src="src/assets/img/MY DESKTOP.png"
+              src={desktopLogo}
               alt="Victoria's Desktop"
               className="w-[800px] h-auto"
               animate={{
