@@ -78,7 +78,7 @@ const AboutWindow = () => {
         {/* Profile Image */}
         <div className="w-48 h-48 rounded-full border-4 border-primary shadow-xl overflow-hidden">
           <img 
-            src="images/pixilart-drawing.png" 
+            src="images/FotoPerfil.jpeg" 
             alt="Victoria Vielma"
             className="w-full h-full object-cover"
           />

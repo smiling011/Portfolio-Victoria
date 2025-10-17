@@ -59,7 +59,7 @@ const resources = {
       "intro.loading": "Loading...",
       
       // About Window
-      "about.hello": "Hello !",
+      "about.hello": "Hi!",
       "about.name": "I'm Victoria Vielma",
       "about.title1": "Full Stack Developer",
       "about.title2": "Mobile Developer",
