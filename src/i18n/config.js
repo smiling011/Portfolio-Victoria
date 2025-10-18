@@ -42,7 +42,7 @@ const resources = {
       "contact.opening": "¡Abriendo!",
       
       // Footer
-      "footer.rights": "Victoria Vielma 2025 © Hecho con ❤️ y ☕"
+      "footer.rights": "Victoria Vielma 2025 © Copyright"
     }
   },
   en: {
@@ -83,7 +83,7 @@ const resources = {
       "contact.opening": "Opening!",
       
       // Footer
-      "footer.rights": "Victoria Vielma 2025 © Made with ❤️ and ☕"
+      "footer.rights": "Victoria Vielma 2025 © Copyright"
     }
   }
 };

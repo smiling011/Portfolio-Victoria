@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { useSound } from '../hooks/useSound';
 import { useTranslation } from 'react-i18next';
 
-// Importaciond ela img
+// Importación de las imágenes
 import python from '../assets/icons/python.png';
 import flask from '../assets/icons/flask.png';
 import dart from '../assets/icons/dart.png';
@@ -21,9 +22,7 @@ import figma from '../assets/icons/figma.png';
 import UK from '../assets/icons/UK.png';
 import ES from '../assets/icons/ES.png';
 
-
-
-const SkillBadge = ({ icon, name }) => {
+const SkillBadge = ({ icon, name, isMobile }) => {
   const playSound = useSound('sounds/hover.mp3', 0.2);
 
   return (
@@ -31,17 +30,27 @@ const SkillBadge = ({ icon, name }) => {
       whileHover={{ scale: 1.1, y: -5 }}
       whileTap={{ scale: 0.95 }}
       onMouseEnter={playSound}
-      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-secondary border-2 border-white shadow-md cursor-pointer transition-all"
+      className={`flex items-center gap-2 ${isMobile ? 'px-3 py-2' : 'px-4 py-2.5'} rounded-full bg-secondary border-2 border-white shadow-md cursor-pointer transition-all`}
       style={{ width: 'fit-content', minWidth: 'max-content' }}
     >
-      <img src={icon} alt={name} className="w-6 h-6 flex-shrink-0" />
-      <span className="font-bold text-white text-sm whitespace-nowrap">{name}</span>
+      <img src={icon} alt={name} className={`${isMobile ? 'w-5 h-5' : 'w-6 h-6'} flex-shrink-0`} />
+      <span className={`font-bold text-white ${isMobile ? 'text-xs' : 'text-sm'} whitespace-nowrap`}>{name}</span>
     </motion.div>
   );
 };
 
 const SkillsWindow = () => {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const skills = {
     languages: [
       { icon: python, name: 'Python' },
@@ -73,17 +82,17 @@ const SkillsWindow = () => {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="border-b-2 border-primary pb-4 mb-6">
-        <p className="text-primary text-lg">
+      <div className={`border-b-2 border-primary ${isMobile ? 'pb-3 mb-4' : 'pb-4 mb-6'}`}>
+        <p className={`text-primary ${isMobile ? 'text-sm' : 'text-lg'}`}>
           {t('skills.header')}
         </p>
       </div>
 
       {/* Skills Grid - Centrado y con scroll */}
       <div className="flex-1 overflow-y-auto">
-        <div className="flex flex-col items-center justify-center space-y-5 px-8">
+        <div className={`flex flex-col items-center justify-center ${isMobile ? 'space-y-4 px-4' : 'space-y-5 px-8'}`}>
           {/* Lenguajes */}
-          <div className="flex flex-wrap justify-center gap-3 w-full">
+          <div className={`flex flex-wrap justify-center ${isMobile ? 'gap-2' : 'gap-3'} w-full`}>
             {skills.languages.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -91,13 +100,13 @@ const SkillsWindow = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <SkillBadge {...skill} />
+                <SkillBadge {...skill} isMobile={isMobile} />
               </motion.div>
             ))}
           </div>
 
           {/* Frameworks */}
-          <div className="flex flex-wrap justify-center gap-3 w-full">
+          <div className={`flex flex-wrap justify-center ${isMobile ? 'gap-2' : 'gap-3'} w-full`}>
             {skills.frameworks.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -105,13 +114,13 @@ const SkillsWindow = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: (index + 5) * 0.1 }}
               >
-                <SkillBadge {...skill} />
+                <SkillBadge {...skill} isMobile={isMobile} />
               </motion.div>
             ))}
           </div>
 
           {/* Tools */}
-          <div className="flex flex-wrap justify-center gap-3 w-full">
+          <div className={`flex flex-wrap justify-center ${isMobile ? 'gap-2' : 'gap-3'} w-full`}>
             {skills.tools.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -119,13 +128,13 @@ const SkillsWindow = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: (index + 10) * 0.1 }}
               >
-                <SkillBadge {...skill} />
+                <SkillBadge {...skill} isMobile={isMobile} />
               </motion.div>
             ))}
           </div>
 
           {/* Idiomas */}
-          <div className="flex flex-wrap justify-center gap-3 w-full mt-4">
+          <div className={`flex flex-wrap justify-center ${isMobile ? 'gap-2 mt-3' : 'gap-3 mt-4'} w-full`}>
             {skills.languages_spoken.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -133,7 +142,7 @@ const SkillsWindow = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: (index + 15) * 0.1 }}
               >
-                <SkillBadge {...skill} />
+                <SkillBadge {...skill} isMobile={isMobile} />
               </motion.div>
             ))}
           </div>
