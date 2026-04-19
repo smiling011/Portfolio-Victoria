@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // ← AGREGAR useEffect aquí
+import { useState, useEffect } from 'react'; 
 import { AnimatePresence } from 'framer-motion';
 import { useWindowManager } from './hooks/useWindowManager';
 import Sidebar from './components/Sidebar';
@@ -11,6 +11,7 @@ import ContactWindow from './windows/ContactWindow';
 import FloatingButtons from './components/FloatingButtons';
 import MobileMenu from './components/MobileMenu';
 import MobileWindow from './components/MobileWindow';
+import BunnyAnimation from  './components/BunnyAnimation';
 
 import { useTranslation } from 'react-i18next';
 
@@ -39,6 +40,8 @@ function App() {
     
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  
 
   const renderWindowContent = (type) => {
     switch (type) {
@@ -93,6 +96,11 @@ function App() {
       <Sidebar onOpenWindow={openWindow} />
 
       <div className="ml-48 w-[calc(100vw-12rem)] h-full relative">
+        {windows.length === 0 && (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <BunnyAnimation />
+    </div>
+  )}
         <AnimatePresence>
           {windows.map((window) => (
             <Window
