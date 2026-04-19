@@ -21,6 +21,9 @@ import git from '../assets/icons/git.png';
 import figma from '../assets/icons/figma.png';
 import UK from '../assets/icons/UK.png';
 import ES from '../assets/icons/ES.png';
+import net from '../assets/icons/net.png';
+import csharp from '../assets/icons/csharp.png';
+import sqlserver from '../assets/icons/sql-server.png';
 
 const SkillBadge = ({ icon, name, isMobile }) => {
   const playSound = useSound('sounds/hover.mp3', 0.2);
@@ -61,10 +64,13 @@ const SkillsWindow = () => {
     ],
     frameworks: [
       { icon: mysql, name: 'MySQL' },
+      { icon: sqlserver, name: 'Microsoft SQL Server' },
       { icon: django, name: 'Django' },
       { icon: flutter, name: 'Flutter' },
       { icon: flask, name: 'Flask' },
       { icon: androidStudio, name: 'Android Studio' },
+      { icon: net, name: 'ASP.NET' },
+      { icon: csharp, name: 'C#' },
     ],
     tools: [
       { icon: notion, name: 'Notion' },
