@@ -23,7 +23,7 @@ const resources = {
       "about.title1": "Desarrollador Full Stack",
       "about.title2": "Desarrollador Móvil",
       "about.title3": "Desarrollador Web",
-      "about.description1": "Desarrollador Full Stack Web y Móvil, con formación técnica en programación de software. Actualmente estudio Análisis y Desarrollo de Software.",
+      "about.description1": "Desarrollador Full Stack Web y Móvil, con formación técnica en programación de software y Análisis y Desarrollo de Software.",
       "about.description2": "Me especializo en el desarrollo de aplicaciones, con enfoque en crear soluciones funcionales y bien estructuradas.",
       "about.description3": "Me interesa seguir desarrollando mis habilidades en entornos reales y contribuir en equipos de desarrollo donde pueda aportar desde el conocimiento técnico.",
       
@@ -64,7 +64,7 @@ const resources = {
       "about.title1": "Full Stack Developer",
       "about.title2": "Mobile Developer",
       "about.title3": "Web Developer",
-      "about.description1": "Full Stack Web and Mobile Developer, with technical training in software programming. Currently studying Software Analysis and Development.",
+      "about.description1": "Full Stack Web and Mobile Developer, with technical training in software programming andSoftware Analysis and Development.",
       "about.description2": "I specialize in application development, with a focus on creating functional and well-structured solutions.",
       "about.description3": "I'm interested in continuing to develop my skills in real environments and contribute to development teams where I can contribute from technical knowledge.",
       
